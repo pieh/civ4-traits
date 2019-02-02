@@ -118,6 +118,7 @@ export default class Index extends React.Component {
                 <Table.Row
                   style={style}
                   key={node.leader}
+                  positive={isSelected}
                   onClick={e => {
                     this.setState(
                       this.calculateTraitsAndTechs({
@@ -138,14 +139,16 @@ export default class Index extends React.Component {
                   <Table.Cell>{node.civ}</Table.Cell>
                   <Table.Cell>{node.uniqueUnit}</Table.Cell>
                   <Table.Cell>{node.uniqueBuilding}</Table.Cell>
-                  <Table.Cell negative={isDiscarded.startingTechs}>
+                  <Table.Cell
+                    negative={!isSelected && isDiscarded.startingTechs}
+                  >
                     <ItemList
                       items={node.startingTechs}
                       state={startingTechs}
                     />
                   </Table.Cell>
                   <Table.Cell>{node.leader}</Table.Cell>
-                  <Table.Cell negative={isDiscarded.traits}>
+                  <Table.Cell negative={!isSelected && isDiscarded.traits}>
                     <ItemList items={node.traits} state={traits} />
                   </Table.Cell>
                   <Table.Cell>{node.favouriteCivic}</Table.Cell>
