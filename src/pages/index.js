@@ -5,7 +5,7 @@ import { List, Table, Checkbox } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
 const calculateFields = [`traits`, `startingTechs`];
-const discardFields = [`startingTechs`];
+// const discardFields = [`startingTechs`];
 
 const ItemList = ({ items, state }) => (
   <List as="ul">
@@ -103,25 +103,20 @@ export default class Index extends React.Component {
             {data.allCivLeader.edges.map(({ node }) => {
               const isSelected = selectedLeaders[node.leader];
 
-              let isDiscarded = false;
-              discardFields.forEach(field => {
+              let isDiscarded = {};
+              calculateFields.forEach(field => {
                 node[field].forEach(value => {
                   if (this.state[field][value]) {
-                    isDiscarded = true;
+                    isDiscarded[field] = true;
                   }
                 });
               });
 
               const style = { cursor: "pointer" };
-              const props = {};
-              if (isDiscarded) {
-                props.negative = true;
-              }
 
               return (
                 <Table.Row
                   style={style}
-                  {...props}
                   key={node.leader}
                   onClick={e => {
                     this.setState(
@@ -143,14 +138,14 @@ export default class Index extends React.Component {
                   <Table.Cell>{node.civ}</Table.Cell>
                   <Table.Cell>{node.uniqueUnit}</Table.Cell>
                   <Table.Cell>{node.uniqueBuilding}</Table.Cell>
-                  <Table.Cell>
+                  <Table.Cell negative={isDiscarded.startingTechs}>
                     <ItemList
                       items={node.startingTechs}
                       state={startingTechs}
                     />
                   </Table.Cell>
                   <Table.Cell>{node.leader}</Table.Cell>
-                  <Table.Cell>
+                  <Table.Cell negative={isDiscarded.traits}>
                     <ItemList items={node.traits} state={traits} />
                   </Table.Cell>
                   <Table.Cell>{node.favouriteCivic}</Table.Cell>
