@@ -62,6 +62,12 @@ export default class Index extends React.Component {
     this.state = this.calculateTraitsAndTechs(initialState);
   }
 
+  componentDidMount() {
+    if (window.innerWidth < 768) {
+      this.setState({ showSummary: false });
+    }
+  }
+
   calculateTraitsAndTechs = state => {
     this.props.data.allCivLeader.edges.reduce((acc, { node }) => {
       calculateFields.forEach(field => {
