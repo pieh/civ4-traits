@@ -54,7 +54,8 @@ export default class Index extends React.Component {
       {
         selectedLeaders: {},
         startingTechs: {},
-        traits: {}
+        traits: {},
+        showSummary: true
       }
     );
 
@@ -86,7 +87,7 @@ export default class Index extends React.Component {
 
   render() {
     const { data } = this.props;
-    const { selectedLeaders, startingTechs, traits } = this.state;
+    const { selectedLeaders, startingTechs, traits, showSummary } = this.state;
 
     const selectedLeadersList = Object.keys(selectedLeaders)
       .filter(leader => selectedLeaders[leader])
@@ -160,37 +161,49 @@ export default class Index extends React.Component {
         <div
           style={{
             position: "sticky",
+            background: `white`,
             bottom: 0,
-            background: "yellow",
+            padding: `1em 0`,
             zIndex: 9999
           }}
         >
-          <Table fixed>
-            <Table.Body>
-              <Table.Row>
-                <Table.HeaderCell>Leaders:</Table.HeaderCell>
-                <Table.Cell>
-                  <List as="ul">
-                    {selectedLeadersList.map(leader => {
-                      return (
-                        <List.Item key={leader.leader} as="li">
-                          {leader.leader} ({leader.civ})
-                        </List.Item>
-                      );
-                    })}
-                  </List>
-                </Table.Cell>
-                <Table.HeaderCell>Starting techs:</Table.HeaderCell>
-                <Table.Cell>
-                  <AccumulatedStats state={startingTechs} />
-                </Table.Cell>
-                <Table.HeaderCell>Traits:</Table.HeaderCell>
-                <Table.Cell>
-                  <AccumulatedStats state={traits} />
-                </Table.Cell>
-              </Table.Row>
-            </Table.Body>
-          </Table>
+          <React.Fragment>
+            <Checkbox
+              label="Show summary"
+              checked={showSummary}
+              onChange={() => {
+                this.setState({ showSummary: !showSummary });
+              }}
+            />
+            {showSummary && (
+              <Table fixed>
+                <Table.Body>
+                  <Table.Row>
+                    <Table.HeaderCell>Leaders:</Table.HeaderCell>
+                    <Table.Cell>
+                      <List as="ul">
+                        {selectedLeadersList.map(leader => {
+                          return (
+                            <List.Item key={leader.leader} as="li">
+                              {leader.leader} ({leader.civ})
+                            </List.Item>
+                          );
+                        })}
+                      </List>
+                    </Table.Cell>
+                    <Table.HeaderCell>Starting techs:</Table.HeaderCell>
+                    <Table.Cell>
+                      <AccumulatedStats state={startingTechs} />
+                    </Table.Cell>
+                    <Table.HeaderCell>Traits:</Table.HeaderCell>
+                    <Table.Cell>
+                      <AccumulatedStats state={traits} />
+                    </Table.Cell>
+                  </Table.Row>
+                </Table.Body>
+              </Table>
+            )}
+          </React.Fragment>
         </div>
       </React.Fragment>
     );
