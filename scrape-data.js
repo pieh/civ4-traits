@@ -15,20 +15,20 @@ const run = async () => {
     .eq(1)
     .find("tr")
 
-    .each(function(i) {
+    .each(function (i) {
       if (i === 0) {
         return true;
       }
 
       const cells = $(this).find(`td`);
 
-      const getOffset = index => {
+      const getOffset = (index) => {
         if (index < 4 || cells.length === 8) {
           return index;
         } else return index - 4;
       };
 
-      const extractText = index => {
+      const extractText = (index) => {
         return cells
           .eq(getOffset(index))
           .find("span,em,p")
@@ -37,7 +37,7 @@ const run = async () => {
           .trim();
       };
 
-      const extractList = index => {
+      const extractList = (index) => {
         let td = cells.eq(getOffset(index));
 
         let html = td.find("span,em,p").html();
@@ -49,15 +49,16 @@ const run = async () => {
         return html
           .replace(/\n/g, ``)
           .split("<br>")
-          .map(text => text.trim());
+          .map((text) => text.trim());
       };
 
-      const extractImageSrc = index => {
-        const src = cells
-          .eq(getOffset(index))
-          .find("img")
-          .prop("src");
-        return src ? `https://www.civfanatics.com${src}` : null;
+      const extractImageSrc = (index) => {
+        const src = cells.eq(getOffset(index)).find("img").prop("data-src");
+        return src
+          ? src.startsWith("data:")
+            ? src
+            : `https://www.civfanatics.com${src}`
+          : null;
       };
 
       if (cells.length === 8) {
@@ -66,7 +67,7 @@ const run = async () => {
           civImage: extractImageSrc(0),
           uniqueUnit: extractText(1),
           uniqueBuilding: extractText(2),
-          startingTechs: extractList(3)
+          startingTechs: extractList(3),
         };
       }
 
@@ -75,7 +76,7 @@ const run = async () => {
         leader: extractText(4),
         leaderImage: extractImageSrc(4),
         traits: extractList(5),
-        favouriteCivic: extractText(7)
+        favouriteCivic: extractText(7),
       });
 
       const span = cells.eq(0).prop(`rowspan`);
