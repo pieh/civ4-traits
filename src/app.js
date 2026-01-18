@@ -1,3 +1,5 @@
+import './input.css'
+
 // Helper to use Netlify Image CDN
 function netlifyImage(url, width = 32) {
   if (!url) return '';
@@ -111,6 +113,9 @@ const state = {
   showSummary: true
 };
 
+// DOM element references for each row
+const rowElements = new Map();
+
 // DOM Elements
 const leadersTable = document.getElementById('leaders-table');
 const summaryContent = document.getElementById('summary-content');
@@ -129,7 +134,7 @@ async function init() {
   }
 
   // Load leaders data
-  const response = await fetch('leaders.json');
+  const response = await fetch('/leaders.json');
   state.leaders = await response.json();
 
   // Sort leaders by civ, then by leader name
@@ -146,9 +151,10 @@ async function init() {
   // Calculate initial traits and techs
   calculateTraitsAndTechs();
 
-  // Render
-  renderTable();
-  renderSummary();
+  // Initial render (creates DOM elements)
+  createTable();
+  updateTable();
+  updateSummary();
 
   // Event listeners
   showSummaryCheckbox.addEventListener('change', toggleSummary);
@@ -185,8 +191,8 @@ function calculateTraitsAndTechs() {
 function toggleLeader(leaderName) {
   state.selectedLeaders[leaderName] = !state.selectedLeaders[leaderName];
   calculateTraitsAndTechs();
-  renderTable();
-  renderSummary();
+  updateTable();
+  updateSummary();
 }
 
 function toggleSummary() {
@@ -198,21 +204,125 @@ function toggleSummary() {
   }
 }
 
-function renderItemList(items, countState, descriptions = {}) {
-  return items.map(item => {
-    const isSelected = countState[item] > 0;
-    const classes = isSelected ? 'line-through' : '';
-    const tooltip = descriptions[item] ? ` title="${descriptions[item].replace(/"/g, '&quot;')}"` : '';
-    const cursorClass = descriptions[item] ? ' cursor-help' : '';
-    return `<li class="${classes}${cursorClass}"${tooltip}>${item}</li>`;
-  }).join('');
+function createItemList(items, descriptions = {}) {
+  const ul = document.createElement('ul');
+  ul.className = 'list-disc list-inside';
+
+  items.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    li.dataset.item = item;
+    if (descriptions[item]) {
+      li.title = descriptions[item];
+      li.classList.add('cursor-help');
+    }
+    ul.appendChild(li);
+  });
+
+  return ul;
 }
 
-function renderTable() {
-  leadersTable.innerHTML = state.leaders.map(leader => {
+function createTable() {
+  state.leaders.forEach(leader => {
+    const row = document.createElement('tr');
+    row.className = 'leader-row border-b border-gray-100';
+    row.dataset.leader = leader.leader;
+
+    // Checkbox cell
+    const checkboxCell = document.createElement('td');
+    checkboxCell.className = 'px-2 py-2 text-center';
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'w-4 h-4 pointer-events-none';
+    checkboxCell.appendChild(checkbox);
+    row.appendChild(checkboxCell);
+
+    // Leader name cell
+    const leaderCell = document.createElement('td');
+    leaderCell.className = 'px-2 py-2 font-medium';
+    leaderCell.textContent = leader.leader;
+    row.appendChild(leaderCell);
+
+    // Civ cell
+    const civCell = document.createElement('td');
+    civCell.className = 'px-2 py-2';
+    const civDiv = document.createElement('div');
+    civDiv.className = 'flex items-center gap-2';
+    const civImg = document.createElement('img');
+    civImg.src = netlifyImage(leader.civImage, 32);
+    civImg.alt = leader.civ;
+    civImg.className = 'w-8 h-8 object-contain';
+    const civName = document.createElement('span');
+    civName.textContent = leader.civ;
+    civDiv.appendChild(civImg);
+    civDiv.appendChild(civName);
+    civCell.appendChild(civDiv);
+    row.appendChild(civCell);
+
+    // Traits cell
+    const traitsCell = document.createElement('td');
+    traitsCell.className = 'px-2 py-2';
+    traitsCell.appendChild(createItemList(leader.traits, traitDescriptions));
+    row.appendChild(traitsCell);
+
+    // Techs cell
+    const techsCell = document.createElement('td');
+    techsCell.className = 'px-2 py-2';
+    techsCell.appendChild(createItemList(leader.startingTechs, techDescriptions));
+    row.appendChild(techsCell);
+
+    // Unique unit cell
+    const unitCell = document.createElement('td');
+    unitCell.className = 'px-2 py-2';
+    if (leader.uniqueUnit) {
+      const unitSpan = document.createElement('span');
+      unitSpan.textContent = leader.uniqueUnit;
+      unitSpan.className = 'cursor-help';
+      unitSpan.title = uniqueUnitDescriptions[leader.uniqueUnit] || '';
+      unitCell.appendChild(unitSpan);
+    }
+    row.appendChild(unitCell);
+
+    // Unique building cell
+    const buildingCell = document.createElement('td');
+    buildingCell.className = 'px-2 py-2';
+    if (leader.uniqueBuilding) {
+      const buildingSpan = document.createElement('span');
+      buildingSpan.textContent = leader.uniqueBuilding;
+      buildingSpan.className = 'cursor-help';
+      buildingSpan.title = uniqueBuildingDescriptions[leader.uniqueBuilding] || '';
+      buildingCell.appendChild(buildingSpan);
+    }
+    row.appendChild(buildingCell);
+
+    // Store references
+    rowElements.set(leader.leader, {
+      row,
+      checkbox,
+      traitsCell,
+      techsCell
+    });
+
+    // Click handler
+    row.addEventListener('click', () => toggleLeader(leader.leader));
+
+    leadersTable.appendChild(row);
+  });
+}
+
+function updateTable() {
+  state.leaders.forEach(leader => {
+    const elements = rowElements.get(leader.leader);
+    if (!elements) return;
+
+    const { row, checkbox, traitsCell, techsCell } = elements;
     const isSelected = state.selectedLeaders[leader.leader];
 
-    // Check if any traits or techs overlap with already selected ones
+    // Update row selected state
+    row.classList.toggle('selected', isSelected);
+    checkbox.checked = isSelected;
+
+    // Check for overlaps
     let hasOverlappingTraits = false;
     let hasOverlappingTechs = false;
 
@@ -225,78 +335,52 @@ function renderTable() {
       });
     }
 
-    const rowClasses = [
-      'leader-row',
-      'border-b',
-      'border-gray-100',
-      isSelected ? 'selected' : ''
-    ].filter(Boolean).join(' ');
+    // Update cell backgrounds
+    traitsCell.classList.toggle('bg-red-100', !isSelected && hasOverlappingTraits);
+    techsCell.classList.toggle('bg-red-100', !isSelected && hasOverlappingTechs);
 
-    const techsCellClasses = !isSelected && hasOverlappingTechs ? 'bg-red-100' : '';
-    const traitsCellClasses = !isSelected && hasOverlappingTraits ? 'bg-red-100' : '';
+    // Update strikethrough on traits
+    traitsCell.querySelectorAll('li').forEach(li => {
+      const item = li.dataset.item;
+      li.classList.toggle('line-through', state.traits[item] > 0);
+    });
 
-    return `
-      <tr class="${rowClasses}" data-leader="${leader.leader}">
-        <td class="px-2 py-2 text-center">
-          <input type="checkbox" ${isSelected ? 'checked' : ''} class="w-4 h-4 pointer-events-none">
-        </td>
-        <td class="px-2 py-2 font-medium">${leader.leader}</td>
-        <td class="px-2 py-2">
-          <div class="flex items-center gap-2">
-            <img src="${netlifyImage(leader.civImage, 32)}" alt="${leader.civ}" class="w-8 h-8 object-contain">
-            <span>${leader.civ}</span>
-          </div>
-        </td>
-        <td class="px-2 py-2 ${traitsCellClasses}">
-          <ul class="list-disc list-inside">
-            ${renderItemList(leader.traits, state.traits, traitDescriptions)}
-          </ul>
-        </td>
-        <td class="px-2 py-2 ${techsCellClasses}">
-          <ul class="list-disc list-inside">
-            ${renderItemList(leader.startingTechs, state.startingTechs, techDescriptions)}
-          </ul>
-        </td>
-        <td class="px-2 py-2">${leader.uniqueUnit ? `<span class="cursor-help" title="${(uniqueUnitDescriptions[leader.uniqueUnit] || '').replace(/"/g, '&quot;')}">${leader.uniqueUnit}</span>` : ''}</td>
-        <td class="px-2 py-2">${leader.uniqueBuilding ? `<span class="cursor-help" title="${(uniqueBuildingDescriptions[leader.uniqueBuilding] || '').replace(/"/g, '&quot;')}">${leader.uniqueBuilding}</span>` : ''}</td>
-      </tr>
-    `;
-  }).join('');
-
-  // Add click handlers
-  document.querySelectorAll('.leader-row').forEach(row => {
-    row.addEventListener('click', () => {
-      const leaderName = row.dataset.leader;
-      toggleLeader(leaderName);
+    // Update strikethrough on techs
+    techsCell.querySelectorAll('li').forEach(li => {
+      const item = li.dataset.item;
+      li.classList.toggle('line-through', state.startingTechs[item] > 0);
     });
   });
 }
 
-function renderAccumulatedStats(countState, descriptions = {}) {
-  return Object.keys(countState).sort().map(item => {
-    const count = countState[item];
-    let classes = '';
-    if (count === 0) {
-      classes = 'text-gray-400';
-    } else if (count > 1) {
-      classes = 'text-orange-500';
-    }
-    const tooltip = descriptions[item] ? ` title="${descriptions[item].replace(/"/g, '&quot;')}"` : '';
-    const cursorClass = descriptions[item] ? ' cursor-help' : '';
-    return `<li class="${classes}${cursorClass}"${tooltip}>${item} x ${count}</li>`;
-  }).join('');
-}
-
-function renderSummary() {
+function updateSummary() {
   // Selected leaders list
   const selectedLeadersData = state.leaders.filter(l => state.selectedLeaders[l.leader]);
   selectedLeadersList.innerHTML = selectedLeadersData.map(leader => {
     return `<li>${leader.leader} (${leader.civ})</li>`;
   }).join('');
 
-  // Tech and trait summaries
-  techsSummary.innerHTML = renderAccumulatedStats(state.startingTechs, techDescriptions);
-  traitsSummary.innerHTML = renderAccumulatedStats(state.traits, traitDescriptions);
+  // Tech summary
+  techsSummary.innerHTML = Object.keys(state.startingTechs).sort().map(item => {
+    const count = state.startingTechs[item];
+    let classes = '';
+    if (count === 0) classes = 'text-gray-400';
+    else if (count > 1) classes = 'text-orange-500';
+    const tooltip = techDescriptions[item] ? ` title="${techDescriptions[item].replace(/"/g, '&quot;')}"` : '';
+    const cursorClass = techDescriptions[item] ? ' cursor-help' : '';
+    return `<li class="${classes}${cursorClass}"${tooltip}>${item} x ${count}</li>`;
+  }).join('');
+
+  // Trait summary
+  traitsSummary.innerHTML = Object.keys(state.traits).sort().map(item => {
+    const count = state.traits[item];
+    let classes = '';
+    if (count === 0) classes = 'text-gray-400';
+    else if (count > 1) classes = 'text-orange-500';
+    const tooltip = traitDescriptions[item] ? ` title="${traitDescriptions[item].replace(/"/g, '&quot;')}"` : '';
+    const cursorClass = traitDescriptions[item] ? ' cursor-help' : '';
+    return `<li class="${classes}${cursorClass}"${tooltip}>${item} x ${count}</li>`;
+  }).join('');
 }
 
 // Start the app
