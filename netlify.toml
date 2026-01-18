@@ -1,5 +1,5 @@
 [build]
-  command = "npm run update-data"
+  command = "npm run build"
   publish = "dist"
 
 [images]

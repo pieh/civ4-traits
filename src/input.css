@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.leader-row { cursor: pointer; }
+.leader-row:hover { background-color: #f3f4f6; }
+.leader-row.selected { background-color: #dcfce7 !important; }
+.leader-row.selected:hover { background-color: #bbf7d0 !important; }
