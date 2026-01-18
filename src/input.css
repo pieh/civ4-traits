@@ -1,8 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 .leader-row { cursor: pointer; }
-.leader-row:hover { background-color: #f3f4f6; }
-.leader-row.selected { background-color: #dcfce7 !important; }
-.leader-row.selected:hover { background-color: #bbf7d0 !important; }
+.leader-row:hover { background-color: var(--color-gray-100); }
+.leader-row.selected { background-color: var(--color-green-100) !important; }
+.leader-row.selected:hover { background-color: var(--color-green-200) !important; }

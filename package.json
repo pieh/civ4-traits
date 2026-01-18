@@ -1,20 +1,24 @@
 {
   "name": "civ4-leader-trait-analyzer",
   "private": true,
+  "type": "module",
   "description": "Civ4 Leader Trait Analyzer",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "serve": "npx serve dist",
-    "build": "npm run update-data && npm run build:css",
-    "build:css": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
-    "update-data": "node update-data.js"
+    "dev": "vite",
+    "build": "npm run update-data && vite build",
+    "preview": "vite preview",
+    "update-data": "node update-data.cjs"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.18",
     "axios": "^1.13.2",
     "cheerio": "^1.0.0-rc.2"
   },
   "devDependencies": {
-    "tailwindcss": "^3"
+    "@netlify/vite-plugin": "^2.7.19",
+    "tailwindcss": "^4.1.18",
+    "vite": "^7.3.1"
   }
 }
