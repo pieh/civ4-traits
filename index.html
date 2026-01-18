@@ -6,8 +6,8 @@
   <title>Civ4 BTS Dream Team Builder</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
-<body class="bg-gray-50 min-h-screen">
-  <div class="container mx-auto px-4 py-6">
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <div class="container mx-auto px-4 py-6 flex-1">
     <h1 class="text-2xl font-bold mb-2">Build Your Civ4 Beyond the Sword Dream Team</h1>
     <p class="text-gray-600 mb-4">A fun little tool for assembling the perfect multiplayer squad. Pick your leaders and see how their traits, techs, and uniques stack up together. Red highlights show overlaps with your current picks, orange counts mean duplicates. May your team conquer the world!</p>
 
@@ -34,10 +34,16 @@
   <!-- Sticky Summary Panel -->
   <div id="summary-panel" class="sticky bottom-0 bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] border-t border-gray-200 z-50 p-4">
     <div class="container mx-auto">
-      <label class="flex items-center gap-2 mb-3 cursor-pointer">
-        <input type="checkbox" id="show-summary" checked class="w-4 h-4">
-        <span class="font-medium">Show summary</span>
-      </label>
+      <div class="flex flex-wrap gap-4 mb-3">
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" id="show-summary" checked class="w-4 h-4">
+          <span class="font-medium">Show summary</span>
+        </label>
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" id="hide-overlapping-techs" checked class="w-4 h-4">
+          <span class="font-medium">Hide civilizations with overlapping starting techs</span>
+        </label>
+      </div>
 
       <div id="summary-content" class="overflow-x-auto">
         <table class="w-full text-sm table-fixed">

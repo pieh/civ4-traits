@@ -110,7 +110,8 @@ const state = {
   selectedLeaders: {},
   traits: {},
   startingTechs: {},
-  showSummary: true
+  showSummary: true,
+  hideOverlappingTechs: true
 };
 
 // DOM element references for each row
@@ -120,6 +121,7 @@ const rowElements = new Map();
 const leadersTable = document.getElementById('leaders-table');
 const summaryContent = document.getElementById('summary-content');
 const showSummaryCheckbox = document.getElementById('show-summary');
+const hideOverlappingTechsCheckbox = document.getElementById('hide-overlapping-techs');
 const selectedLeadersList = document.getElementById('selected-leaders-list');
 const techsSummary = document.getElementById('techs-summary');
 const traitsSummary = document.getElementById('traits-summary');
@@ -158,6 +160,7 @@ async function init() {
 
   // Event listeners
   showSummaryCheckbox.addEventListener('change', toggleSummary);
+  hideOverlappingTechsCheckbox.addEventListener('change', toggleHideOverlappingTechs);
 }
 
 function calculateTraitsAndTechs() {
@@ -202,6 +205,11 @@ function toggleSummary() {
   } else {
     summaryContent.classList.add('hidden');
   }
+}
+
+function toggleHideOverlappingTechs() {
+  state.hideOverlappingTechs = hideOverlappingTechsCheckbox.checked;
+  updateTable();
 }
 
 function createItemList(items, descriptions = {}) {
@@ -334,6 +342,10 @@ function updateTable() {
         if (state.startingTechs[tech] > 0) hasOverlappingTechs = true;
       });
     }
+
+    // Hide row if filter is enabled and has overlapping techs (and not selected)
+    const shouldHide = state.hideOverlappingTechs && !isSelected && hasOverlappingTechs;
+    row.classList.toggle('hidden', shouldHide);
 
     // Update cell backgrounds
     traitsCell.classList.toggle('bg-red-100', !isSelected && hasOverlappingTraits);
