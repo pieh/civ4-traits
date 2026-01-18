@@ -1,3 +1,9 @@
+// Helper to use Netlify Image CDN
+function netlifyImage(url, width = 32) {
+  if (!url) return '';
+  return `/.netlify/images?url=${encodeURIComponent(url)}&w=${width}`;
+}
+
 // State
 const state = {
   leaders: [],
@@ -137,7 +143,7 @@ function renderTable() {
         <td class="px-2 py-2 font-medium">${leader.leader}</td>
         <td class="px-2 py-2">
           <div class="flex items-center gap-2">
-            <img src="${leader.civImage}" alt="${leader.civ}" class="w-8 h-8 object-contain">
+            <img src="${netlifyImage(leader.civImage, 32)}" alt="${leader.civ}" class="w-8 h-8 object-contain">
             <span>${leader.civ}</span>
           </div>
         </td>
