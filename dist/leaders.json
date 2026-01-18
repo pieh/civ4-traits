@@ -1,0 +1,834 @@
+[
+  {
+    "civ": "America",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/america.jpg",
+    "uniqueUnit": "Navy SEAL",
+    "uniqueBuilding": "Mall",
+    "startingTechs": [
+      "Fishing",
+      "Agriculture"
+    ],
+    "leader": "George Washington",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/washington.jpg",
+    "traits": [
+      "Expansive",
+      "Charismatic"
+    ]
+  },
+  {
+    "civ": "America",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/america.jpg",
+    "uniqueUnit": "Navy SEAL",
+    "uniqueBuilding": "Mall",
+    "startingTechs": [
+      "Fishing",
+      "Agriculture"
+    ],
+    "leader": "Franklin D. Roosevelt",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/roosevelt.jpg",
+    "traits": [
+      "Industrious",
+      "Organized"
+    ]
+  },
+  {
+    "civ": "America",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/america.jpg",
+    "uniqueUnit": "Navy SEAL",
+    "uniqueBuilding": "Mall",
+    "startingTechs": [
+      "Fishing",
+      "Agriculture"
+    ],
+    "leader": "Abraham Lincoln",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/lincoln.jpg",
+    "traits": [
+      "Philosophical",
+      "Charismatic"
+    ]
+  },
+  {
+    "civ": "Arabia",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/arabia.jpg",
+    "uniqueUnit": "Camel Archer",
+    "uniqueBuilding": "Madrassa",
+    "startingTechs": [
+      "Mysticism",
+      "The Wheel"
+    ],
+    "leader": "Saladin",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/saladin.jpg",
+    "traits": [
+      "Protective",
+      "Spiritual"
+    ]
+  },
+  {
+    "civ": "Aztecs",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/aztec.jpg",
+    "uniqueUnit": "Jaguar",
+    "uniqueBuilding": "Sacrificial Altar",
+    "startingTechs": [
+      "Mysticism",
+      "Hunting"
+    ],
+    "leader": "Montezuma",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/montezuma.jpg",
+    "traits": [
+      "Aggressive",
+      "Spiritual"
+    ]
+  },
+  {
+    "civ": "Babylon",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/babylonian.jpg",
+    "uniqueUnit": "Bowman",
+    "uniqueBuilding": "Garden",
+    "startingTechs": [
+      "The Wheel",
+      "Agriculture"
+    ],
+    "leader": "Hammurabi",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/hammurabi.jpg",
+    "traits": [
+      "Aggressive",
+      "Organized"
+    ]
+  },
+  {
+    "civ": "Byzantium",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/byzantine.jpg",
+    "uniqueUnit": "Cataphract",
+    "uniqueBuilding": "Hippodrome",
+    "startingTechs": [
+      "The Wheel",
+      "Mysticism"
+    ],
+    "leader": "Justinian I",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/justinian.jpg",
+    "traits": [
+      "Spiritual",
+      "Imperialistic"
+    ]
+  },
+  {
+    "civ": "Carthage",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/carthage.jpg",
+    "uniqueUnit": "Numidian Cavalry",
+    "uniqueBuilding": "Cothon",
+    "startingTechs": [
+      "Fishing",
+      "Mining"
+    ],
+    "leader": "Hannibal",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/hannibal.jpg",
+    "traits": [
+      "Financial",
+      "Charismatic"
+    ]
+  },
+  {
+    "civ": "Celts",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/celts.jpg",
+    "uniqueUnit": "Gallic Warrior",
+    "uniqueBuilding": "Dun",
+    "startingTechs": [
+      "Mysticism",
+      "Hunting"
+    ],
+    "leader": "Boudica",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/boudica.jpg",
+    "traits": [
+      "Agressive",
+      "Charismatic"
+    ]
+  },
+  {
+    "civ": "Celts",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/celts.jpg",
+    "uniqueUnit": "Gallic Warrior",
+    "uniqueBuilding": "Dun",
+    "startingTechs": [
+      "Mysticism",
+      "Hunting"
+    ],
+    "leader": "Brennus",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/brennus.jpg",
+    "traits": [
+      "Spiritual",
+      "Charismatic"
+    ]
+  },
+  {
+    "civ": "China",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/china.jpg",
+    "uniqueUnit": "Cho-Ku-Nu",
+    "uniqueBuilding": "Pavilion",
+    "startingTechs": [
+      "Agriculture",
+      "Mining"
+    ],
+    "leader": "Mao Zedong",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/mao.jpg",
+    "traits": [
+      "Expansive",
+      "Protective"
+    ]
+  },
+  {
+    "civ": "China",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/china.jpg",
+    "uniqueUnit": "Cho-Ku-Nu",
+    "uniqueBuilding": "Pavilion",
+    "startingTechs": [
+      "Agriculture",
+      "Mining"
+    ],
+    "leader": "Qin Shi Huang",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/qin.jpg",
+    "traits": [
+      "Industrious",
+      "Protective"
+    ]
+  },
+  {
+    "civ": "Dutch",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/dutch.jpg",
+    "uniqueUnit": "East Indiaman",
+    "uniqueBuilding": "Dike",
+    "startingTechs": [
+      "Fishing",
+      "Agriculture"
+    ],
+    "leader": "Willem van Oranje",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/willem.jpg",
+    "traits": [
+      "Financial",
+      "Creative"
+    ]
+  },
+  {
+    "civ": "Egypt",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/egypt.jpg",
+    "uniqueUnit": "War Chariot",
+    "uniqueBuilding": "Obelisk",
+    "startingTechs": [
+      "Agriculture",
+      "The Wheel"
+    ],
+    "leader": "Hatshepsut",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/hatshepsut.jpg",
+    "traits": [
+      "Spiritual",
+      "Creative"
+    ]
+  },
+  {
+    "civ": "Egypt",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/egypt.jpg",
+    "uniqueUnit": "War Chariot",
+    "uniqueBuilding": "Obelisk",
+    "startingTechs": [
+      "Agriculture",
+      "The Wheel"
+    ],
+    "leader": "Ramesses II",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/ramesses.jpg",
+    "traits": [
+      "Spiritual",
+      "Industrious"
+    ]
+  },
+  {
+    "civ": "England",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/england.jpg",
+    "uniqueUnit": "Redcoat",
+    "uniqueBuilding": "Stock Exchange",
+    "startingTechs": [
+      "Fishing",
+      "Mining"
+    ],
+    "leader": "Victoria",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/victoria.jpg",
+    "traits": [
+      "Imperialistic",
+      "Financial"
+    ]
+  },
+  {
+    "civ": "England",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/england.jpg",
+    "uniqueUnit": "Redcoat",
+    "uniqueBuilding": "Stock Exchange",
+    "startingTechs": [
+      "Fishing",
+      "Mining"
+    ],
+    "leader": "Elizabeth",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/elizabeth.jpg",
+    "traits": [
+      "Philosophical",
+      "Financial"
+    ]
+  },
+  {
+    "civ": "England",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/england.jpg",
+    "uniqueUnit": "Redcoat",
+    "uniqueBuilding": "Stock Exchange",
+    "startingTechs": [
+      "Fishing",
+      "Mining"
+    ],
+    "leader": "Churchill",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/churchill.jpg",
+    "traits": [
+      "Charismatic",
+      "Protective"
+    ]
+  },
+  {
+    "civ": "Ethiopia",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/ethiopian.jpg",
+    "uniqueUnit": "Oromo Warrior",
+    "uniqueBuilding": "Stele",
+    "startingTechs": [
+      "Hunting",
+      "Mining"
+    ],
+    "leader": "Zara Yaqob",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/zarayaqob.jpg",
+    "traits": [
+      "Creative",
+      "Organized"
+    ]
+  },
+  {
+    "civ": "France",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/france.jpg",
+    "uniqueUnit": "Musketeer",
+    "uniqueBuilding": "Salon",
+    "startingTechs": [
+      "Agriculture",
+      "The Wheel"
+    ],
+    "leader": "Louis XIV",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/louis.jpg",
+    "traits": [
+      "Creative",
+      "Industrious"
+    ]
+  },
+  {
+    "civ": "France",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/france.jpg",
+    "uniqueUnit": "Musketeer",
+    "uniqueBuilding": "Salon",
+    "startingTechs": [
+      "Agriculture",
+      "The Wheel"
+    ],
+    "leader": "Napoleon",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/napoleon.jpg",
+    "traits": [
+      "Organized",
+      "Charismatic"
+    ]
+  },
+  {
+    "civ": "France",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/france.jpg",
+    "uniqueUnit": "Musketeer",
+    "uniqueBuilding": "Salon",
+    "startingTechs": [
+      "Agriculture",
+      "The Wheel"
+    ],
+    "leader": "De Gaulle",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/degaulle.jpg",
+    "traits": [
+      "Industrious",
+      "Charismatic"
+    ]
+  },
+  {
+    "civ": "Germany",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/germany.jpg",
+    "uniqueUnit": "Panzer",
+    "uniqueBuilding": "Assembly Plant",
+    "startingTechs": [
+      "Hunting",
+      "Mining"
+    ],
+    "leader": "Frederick",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/frederick.jpg",
+    "traits": [
+      "Philosophical",
+      "Organized"
+    ]
+  },
+  {
+    "civ": "Germany",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/germany.jpg",
+    "uniqueUnit": "Panzer",
+    "uniqueBuilding": "Assembly Plant",
+    "startingTechs": [
+      "Hunting",
+      "Mining"
+    ],
+    "leader": "Bismarck",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/bismarck.jpg",
+    "traits": [
+      "Expansive",
+      "Industrious"
+    ]
+  },
+  {
+    "civ": "Greece",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/greece.jpg",
+    "uniqueUnit": "Phalanx",
+    "uniqueBuilding": "Odeon",
+    "startingTechs": [
+      "Fishing",
+      "Hunting"
+    ],
+    "leader": "Alexander",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/alexander.jpg",
+    "traits": [
+      "Aggressive",
+      "Philosophical"
+    ]
+  },
+  {
+    "civ": "Greece",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/greece.jpg",
+    "uniqueUnit": "Phalanx",
+    "uniqueBuilding": "Odeon",
+    "startingTechs": [
+      "Fishing",
+      "Hunting"
+    ],
+    "leader": "Pericles",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/pericles.jpg",
+    "traits": [
+      "Creative",
+      "Philosophical"
+    ]
+  },
+  {
+    "civ": "Holy Roman Empire",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/holyroman.jpg",
+    "uniqueUnit": "Landsknecht",
+    "uniqueBuilding": "Rathaus",
+    "startingTechs": [
+      "Hunting",
+      "Mysticism"
+    ],
+    "leader": "Charlemagne",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/charlemagne.jpg",
+    "traits": [
+      "Protective",
+      "Imperialistic"
+    ]
+  },
+  {
+    "civ": "Inca",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/inca.jpg",
+    "uniqueUnit": "Quechua",
+    "uniqueBuilding": "Terrace",
+    "startingTechs": [
+      "Agriculture",
+      "Mysticism"
+    ],
+    "leader": "Huayna Capac",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/huaynacapac.jpg",
+    "traits": [
+      "Financial",
+      "Industrious"
+    ]
+  },
+  {
+    "civ": "India",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/india.jpg",
+    "uniqueUnit": "Fast Worker",
+    "uniqueBuilding": "Mausoleum",
+    "startingTechs": [
+      "Mysticism",
+      "Mining"
+    ],
+    "leader": "Gandhi",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/gandhi.jpg",
+    "traits": [
+      "Spiritual",
+      "Philosophical"
+    ]
+  },
+  {
+    "civ": "India",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/india.jpg",
+    "uniqueUnit": "Fast Worker",
+    "uniqueBuilding": "Mausoleum",
+    "startingTechs": [
+      "Mysticism",
+      "Mining"
+    ],
+    "leader": "Asoka",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/asoka.jpg",
+    "traits": [
+      "Organized",
+      "Spiritual"
+    ]
+  },
+  {
+    "civ": "Japan",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/japan.jpg",
+    "uniqueUnit": "Samurai",
+    "uniqueBuilding": "Shale Plant",
+    "startingTechs": [
+      "Fishing",
+      "The Wheel"
+    ],
+    "leader": "Tokugawa",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/tokugawa.jpg",
+    "traits": [
+      "Aggressive",
+      "Protective"
+    ]
+  },
+  {
+    "civ": "Khmer",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/khmer.jpg",
+    "uniqueUnit": "Ballista Elephant",
+    "uniqueBuilding": "Baray",
+    "startingTechs": [
+      "Hunting",
+      "Mining"
+    ],
+    "leader": "Suryavarman II",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/suryavarman.jpg",
+    "traits": [
+      "Expansive",
+      "Creative"
+    ]
+  },
+  {
+    "civ": "Korea",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/korea.jpg",
+    "uniqueUnit": "Hwacha",
+    "uniqueBuilding": "Seowon",
+    "startingTechs": [
+      "Mysticism",
+      "Mining"
+    ],
+    "leader": "Wang Kon",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/wangkon.jpg",
+    "traits": [
+      "Financial",
+      "Protective"
+    ]
+  },
+  {
+    "civ": "Mali",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/mali.jpg",
+    "uniqueUnit": "Skirmisher",
+    "uniqueBuilding": "Mint",
+    "startingTechs": [
+      "Mining",
+      "The Wheel"
+    ],
+    "leader": "Mansa Musa",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/mansamusa.jpg",
+    "traits": [
+      "Financial",
+      "Spiritual"
+    ]
+  },
+  {
+    "civ": "Maya",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/maya.jpg",
+    "uniqueUnit": "Holkan",
+    "uniqueBuilding": "Ball Court",
+    "startingTechs": [
+      "Mysticism",
+      "Mining"
+    ],
+    "leader": "Pacal II",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/pacal.jpg",
+    "traits": [
+      "Financial",
+      "Expansive"
+    ]
+  },
+  {
+    "civ": "Mongolia",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/mongolia.jpg",
+    "uniqueUnit": "Keshik",
+    "uniqueBuilding": "Ger",
+    "startingTechs": [
+      "Hunting",
+      "The Wheel"
+    ],
+    "leader": "Genghis Khan",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/genghiskhan.jpg",
+    "traits": [
+      "Aggressive",
+      "Imperialistic"
+    ]
+  },
+  {
+    "civ": "Mongolia",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/mongolia.jpg",
+    "uniqueUnit": "Keshik",
+    "uniqueBuilding": "Ger",
+    "startingTechs": [
+      "Hunting",
+      "The Wheel"
+    ],
+    "leader": "Kublai Khan",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/kublaikhan.jpg",
+    "traits": [
+      "Aggressive",
+      "Creative"
+    ]
+  },
+  {
+    "civ": "Native Americans",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/nativeamerican.jpg",
+    "uniqueUnit": "Dog Soldier",
+    "uniqueBuilding": "Totem Pole",
+    "startingTechs": [
+      "Fishing",
+      "Agriculture"
+    ],
+    "leader": "Sitting Bull",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/sittingbull.jpg",
+    "traits": [
+      "Philosophical",
+      "Protective"
+    ]
+  },
+  {
+    "civ": "Ottomans",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/ottoman.jpg",
+    "uniqueUnit": "Janissary",
+    "uniqueBuilding": "Hammam",
+    "startingTechs": [
+      "Agriculture",
+      "The Wheel"
+    ],
+    "leader": "Mehmed II",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/mehmed.jpg",
+    "traits": [
+      "Expansive",
+      "Organized"
+    ]
+  },
+  {
+    "civ": "Ottomans",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/ottoman.jpg",
+    "uniqueUnit": "Janissary",
+    "uniqueBuilding": "Hammam",
+    "startingTechs": [
+      "Agriculture",
+      "The Wheel"
+    ],
+    "leader": "Suleiman",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/suleiman.jpg",
+    "traits": [
+      "Philosophical",
+      "Imperialistic"
+    ]
+  },
+  {
+    "civ": "Persia",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/persia.jpg",
+    "uniqueUnit": "Immortal",
+    "uniqueBuilding": "Apothecary",
+    "startingTechs": [
+      "Agriculture",
+      "Hunting"
+    ],
+    "leader": "Cyrus",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/cyrus.jpg",
+    "traits": [
+      "Imperialistic",
+      "Charismatic"
+    ]
+  },
+  {
+    "civ": "Persia",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/persia.jpg",
+    "uniqueUnit": "Immortal",
+    "uniqueBuilding": "Apothecary",
+    "startingTechs": [
+      "Agriculture",
+      "Hunting"
+    ],
+    "leader": "Darius I",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/darius.jpg",
+    "traits": [
+      "Organized",
+      "Financial"
+    ]
+  },
+  {
+    "civ": "Portugal",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/portuguese.jpg",
+    "uniqueUnit": "Carrack",
+    "uniqueBuilding": "Feitoria",
+    "startingTechs": [
+      "Fishing",
+      "Mining"
+    ],
+    "leader": "Joao II",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/joao.jpg",
+    "traits": [
+      "Imperialistic",
+      "Expansive"
+    ]
+  },
+  {
+    "civ": "Rome",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/rome.jpg",
+    "uniqueUnit": "Praetorian",
+    "uniqueBuilding": "Forum",
+    "startingTechs": [
+      "Fishing",
+      "Mining"
+    ],
+    "leader": "Julius Caesar",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/julius.jpg",
+    "traits": [
+      "Imperialistic",
+      "Organized"
+    ]
+  },
+  {
+    "civ": "Rome",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/rome.jpg",
+    "uniqueUnit": "Praetorian",
+    "uniqueBuilding": "Forum",
+    "startingTechs": [
+      "Fishing",
+      "Mining"
+    ],
+    "leader": "Augustus Caesar",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/augustus.jpg",
+    "traits": [
+      "Industrious",
+      "Imperialistic"
+    ]
+  },
+  {
+    "civ": "Russia",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/russia.jpg",
+    "uniqueUnit": "Cossack",
+    "uniqueBuilding": "Research Institute",
+    "startingTechs": [
+      "Hunting",
+      "Mining"
+    ],
+    "leader": "Catherine",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/catherine.jpg",
+    "traits": [
+      "Imperialistic",
+      "Creative"
+    ]
+  },
+  {
+    "civ": "Russia",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/russia.jpg",
+    "uniqueUnit": "Cossack",
+    "uniqueBuilding": "Research Institute",
+    "startingTechs": [
+      "Hunting",
+      "Mining"
+    ],
+    "leader": "Peter",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/peter.jpg",
+    "traits": [
+      "Expansive",
+      "Philosophical"
+    ]
+  },
+  {
+    "civ": "Russia",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/russia.jpg",
+    "uniqueUnit": "Cossack",
+    "uniqueBuilding": "Research Institute",
+    "startingTechs": [
+      "Hunting",
+      "Mining"
+    ],
+    "leader": "Stalin",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/stalin.jpg",
+    "traits": [
+      "Agressive",
+      "Industrious"
+    ]
+  },
+  {
+    "civ": "Spain",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/spain.jpg",
+    "uniqueUnit": "Conquistador",
+    "uniqueBuilding": "Citadel",
+    "startingTechs": [
+      "Fishing",
+      "Mysticism"
+    ],
+    "leader": "Isabella",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/isabella.jpg",
+    "traits": [
+      "Expansive",
+      "Spiritual"
+    ]
+  },
+  {
+    "civ": "Sumeria",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/sumerian.jpg",
+    "uniqueUnit": "Vulture",
+    "uniqueBuilding": "Ziggurat",
+    "startingTechs": [
+      "Agriculture",
+      "The Wheel"
+    ],
+    "leader": "Gilgamesh",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/gilgamesh.jpg",
+    "traits": [
+      "Creative",
+      "Protective"
+    ]
+  },
+  {
+    "civ": "Vikings",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/viking.jpg",
+    "uniqueUnit": "Beserker",
+    "uniqueBuilding": "Trading Post",
+    "startingTechs": [
+      "Fishing",
+      "Hunting"
+    ],
+    "leader": "Ragnar",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/ragnar.jpg",
+    "traits": [
+      "Aggressive",
+      "Financial"
+    ]
+  },
+  {
+    "civ": "Zulu",
+    "civImage": "https://www.civfanatics.com/images/civ4/info_center/nations/zulu.jpg",
+    "uniqueUnit": "Impi",
+    "uniqueBuilding": "Ikhanda",
+    "startingTechs": [
+      "Agriculture",
+      "Hunting"
+    ],
+    "leader": "Shaka",
+    "leaderImage": "https://www.civfanatics.com/images/civ4/info_center/icons/shaka.jpg",
+    "traits": [
+      "Agressive",
+      "Expansive"
+    ]
+  }
+]

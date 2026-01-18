@@ -29,12 +29,13 @@ const run = async () => {
       };
 
       const extractText = (index) => {
-        return cells
-          .eq(getOffset(index))
-          .find("span,em,p")
-          .text()
-          .replace(/\n/g, ``)
-          .trim();
+        const cell = cells.eq(getOffset(index));
+        // Try finding text in span/em/p first, fall back to direct cell text
+        let text = cell.find("span,em,p").text();
+        if (!text) {
+          text = cell.text();
+        }
+        return text.replace(/\n/g, ``).trim();
       };
 
       const extractList = (index) => {
@@ -76,7 +77,6 @@ const run = async () => {
         leader: extractText(4),
         leaderImage: extractImageSrc(4),
         traits: extractList(5),
-        favouriteCivic: extractText(7),
       });
 
       const span = cells.eq(0).prop(`rowspan`);
